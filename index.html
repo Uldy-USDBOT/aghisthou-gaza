@@ -6,34 +6,25 @@
     <title>جمعية البر - لأجل أطفال غزة</title>
     <style>
         :root {
-            --primary-color: #e63946; /* لون نداء إنساني قوي */
+            --primary-color: #e63946;
             --secondary-color: #1d3557;
             --background-color: #f8f9fa;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-color: var(--background-color);
-            color: #333;
-            line-height: 1.8;
+            color: #333; line-height: 1.8;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
 
         header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
         }
 
         nav { display: flex; justify-content: center; align-items: center; }
@@ -42,167 +33,105 @@
 
         /* Hero Section */
         .hero {
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            /* صورة Hero حقيقية ومؤثرة لأطفال غزة */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200');
-            background-size: cover;
-            background-position: center;
+            height: 55vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Gaza1_edit_72236428164160.jpg');
+            background-size: cover; background-position: center;
         }
 
         .hero h1 { font-size: 3rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.4rem; max-width: 800px; margin: 15px auto 0; }
 
-        /* Blog Section (Moved Before Donation) */
-        .blog-section { padding: 80px 0; }
-        .section-header { text-align: center; margin-bottom: 60px; }
+        /* Blog Section */
+        .blog-section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: 2.5rem; color: var(--secondary-color); border-bottom: 4px solid var(--primary-color); display: inline-block; padding-bottom: 10px; }
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .blog-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s;
         }
 
         .blog-card:hover { transform: translateY(-10px); }
         .blog-card img { width: 100%; height: 260px; object-fit: cover; }
         .blog-content { padding: 25px; }
-        .blog-content h3 { color: var(--secondary-color); margin-top: 0; font-size: 1.4rem; }
-        .blog-content p { color: #555; font-size: 1rem; }
+        .blog-content h3 { color: var(--secondary-color); margin-top: 0; }
 
-        /* Donation Section (After Blog) */
+        /* Donation Section */
         .donation-section {
             background-color: var(--secondary-color);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+            color: white; padding: 80px 0; text-align: center;
         }
 
         .donation-card {
-            background: white;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 50px;
-            border-radius: 25px;
+            background: white; color: #333; max-width: 800px;
+            margin: 0 auto; padding: 40px; border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
-        .donation-card h2 { color: var(--primary-color); font-size: 2.2rem; margin-bottom: 15px; }
+        .donation-card h2 { color: var(--primary-color); }
 
         .wallet-box {
-            background: #f1f5f9;
-            border: 2px dashed #cbd5e0;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 25px 0;
-            cursor: pointer;
-            transition: all 0.3s;
+            background: #f1f5f9; border: 2px dashed #cbd5e0;
+            padding: 20px; border-radius: 12px; margin: 25px 0; cursor: pointer;
         }
 
-        .wallet-box:hover { border-color: var(--primary-color); background: #fff; }
-        .wallet-address {
-            font-family: monospace; font-size: 1.3rem; color: #1e293b;
-            word-break: break-all; font-weight: bold; display: block; margin-top: 10px;
-        }
+        .wallet-address { font-family: monospace; font-size: 1.3rem; font-weight: bold; word-break: break-all; }
 
         .btn-donate {
-            background: var(--primary-color);
-            color: white; border: none;
-            padding: 20px 50px; border-radius: 50px;
-            font-size: 1.4rem; font-weight: bold;
-            cursor: pointer; transition: 0.3s;
+            background: var(--primary-color); color: white; border: none;
+            padding: 18px 45px; border-radius: 50px;
+            font-size: 1.3rem; font-weight: bold; cursor: pointer;
         }
 
-        .btn-donate:hover { transform: scale(1.05); background: #d62828; }
         #copyStatus { color: #10b981; font-weight: bold; margin-top: 15px; display: none; }
 
         footer { background: #111; color: #888; padding: 40px 0; text-align: center; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .donation-card { padding: 30px 20px; width: 90%; }
-            .wallet-address { font-size: 1.1rem; }
-        }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">جمعية <span>البر</span></a>
-        </nav>
-    </div>
-</header>
+<header><div class="container"><nav><a href="#" class="logo">جمعية <span>البر</span></a></nav></div></header>
 
 <section class="hero">
     <div class="container">
         <h1>هم بحاجة إلينا.. اليوم</h1>
-        <p>مبادرة أهلية لإيصال التبرعات المباشرة لأطفال وعائلات غزة المحاصرة</p>
+        <p>مبادرة أهلية لإيصال التبرعات المباشرة لأهلنا في غزة</p>
     </div>
 </section>
 
 <section class="blog-section container">
-    <div class="section-header">
-        <h2>يوميات من قلب الصمود</h2>
-    </div>
-
+    <div class="section-header"><h2>يوميات من قلب الصمود</h2></div>
     <div class="blog-grid">
         <div class="blog-card">
-            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb8?q=80&w=600" alt="طفولة وسط الركام">
-            <div class="blog-content">
-                <h3>أحلام لا يوقفها الركام</h3>
-                <p>بين جدران متصدعة، لا يزال أطفالنا يرفعون رؤوسهم للسماء. هذه الطفلة تلخص حكاية شعب يرفض الانكسار ويصنع الأمل من قلب الرماد.</p>
-            </div>
+            <img src="gaza2.jpg" alt="صمود">
+            <div class="blog-content"><h3>أحلام وسط الركام</h3><p>قصص تعكس إرادة أطفالنا في الحياة رغم الدمار المحيط بهم.</p></div>
         </div>
         <div class="blog-card">
-            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600" alt="العلم سلاح">
-            <div class="blog-content">
-                <h3>العلم سلاح في وجه الظلام</h3>
-                <p>رغم هدم المدارس، يظل الكتاب هو الرفيق الدائم تحت الخيام المتهالكة لمتابعة تعليمهم. إرادتهم هي الضمان الوحيد لمستقبل مشرق.</p>
-            </div>
+            <img src="gaza3_edit_72236428164160.jpg" alt="تعليم">
+            <div class="blog-content"><h3>العلم في وجه الظلام</h3><p>الإصرار على التعليم تحت الخيام يثبت أن المستقبل لا يُهزم.</p></div>
         </div>
         <div class="blog-card">
-            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=600" alt="لقمة العيش">
-            <div class="blog-content">
-                <h3>صراع لأجل رغيف الخبز</h3>
-                <p>يقطع الأطفال مسافات طويلة للحصول على مياه نظيفة أو طحين. مساهماتكم تشتري هذه الضروريات وتنقذ أرواحاً من شبح الجوع.</p>
-            </div>
+            <img src="dsaq-4-1731400892.jpg" alt="كفاح">
+            <div class="blog-content"><h3>رحلة البحث عن لقمة عيش</h3><p>مساهماتكم تؤمن الغذاء الأساسي للأسر المتضررة والمحاصرة.</p></div>
         </div>
         <div class="blog-card">
-            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=600" alt="بسمة غزة">
-            <div class="blog-content">
-                <h3>ضحكات تعلو فوق المدافع</h3>
-                <p>لا يزال الأطفال يجدون مساحة للعب والضحك وسط الخيام. تبرعكم يوفر لهم أبسط مقومات الحياة لتبقى تلك البسمة مرسومة على وجوههم.</p>
-            </div>
+            <img src="63-11-1731396851.jpg" alt="بسمة">
+            <div class="blog-content"><h3>ضحكات تعلو فوق الألم</h3><p>توفير الدعم النفسي والاحتياجات الأساسية لترميم براءة أطفالنا.</p></div>
         </div>
         <div class="blog-card">
-            <img src="https://images.unsplash.com/photo-1473644617742-0a44cf414bb5?q=80&w=600" alt="كفاح للعلاج">
-            <div class="blog-content">
-                <h3>كفاح لأجل قطرة دواء</h3>
-                <p>يواجه الأطفال نقصاً حاداً في المستلزمات الطبية. تبرعاتكم بالعملات الرقمية تتحول فوراً إلى أدوية وإمدادات طبية تصل للأسر المتضررة.</p>
-            </div>
+            <img src="gaza5.jpg" alt="دواء">
+            <div class="blog-content"><h3>كفاح لأجل قطرة دواء</h3><p>تبرعك يساهم في توفير المستلزمات الطبية العاجلة للمرضى والجرحى.</p></div>
         </div>
         <div class="blog-card">
-            <img src="https://images.unsplash.com/photo-1516035030352-78a9c8f0f808?q=80&w=600" alt="رمز الصمود">
-            <div class="blog-content">
-                <h3>الأرض تتكلم صموداً</h3>
-                <p>من غزة نرسل رسالة أمل للعالم؛ نحن باقون ما بقي الزعتر والزيتون. هدفنا هو تأمين الحد الأدنى من الكرامة لكل طفل منكوب.</p>
-            </div>
+            <img src="gaza6.jpg" alt="أرض">
+            <div class="blog-content"><h3>باقون ما بقي الزيتون</h3><p>رسالة صمود وتحدي نرسلها للعالم بفضل دعمكم ومساندتكم.</p></div>
         </div>
     </div>
 </section>
@@ -211,26 +140,18 @@
     <div class="container">
         <div class="donation-card">
             <h2>حوّل تأثرك إلى عمل حقيقي</h2>
-            <p>لا تكتفِ بالمشاهدة.. كن سبباً في إطعام جائع أو علاج طفل مريض. مساهمتك عبر USDT تصل مباشرة وبسرعة.</p>
-            
+            <p>تبرعك عبر USDT يصل مباشرة وبأمان لخدمة المبادرات الإغاثية.</p>
             <div class="wallet-box" onclick="copyWallet()">
                 <span style="font-size: 0.9rem; color: #666;">(USDT - شبكة TRC20)</span><br>
                 <span class="wallet-address" id="walletAddr">TSvW4XVmvY8cyvZdu3yFcbZyMsMW3dYYu8</span>
             </div>
-
             <button class="btn-donate" onclick="copyWallet()">اضغط هنا للنسخ والمساهمة</button>
             <div id="copyStatus">✅ تم نسخ العنوان بنجاح!</div>
         </div>
     </div>
 </section>
 
-<footer>
-    <div class="container">
-        <p><strong>جمعية البر الإغاثية</strong></p>
-        <p>أمانتكم تصل.. ومعاناتهم تخف بفضل الله ثم بفضلكم</p>
-        <p style="font-size: 0.8rem; margin-top: 20px;">© 2026 جميع الحقوق محفوظة لجمعية البر</p>
-    </div>
-</footer>
+<footer><div class="container"><p>© 2026 جميع الحقوق محفوظة لجمعية البر</p></div></footer>
 
 <script>
     function copyWallet() {
@@ -238,12 +159,9 @@
         navigator.clipboard.writeText(address).then(() => {
             const status = document.getElementById('copyStatus');
             status.style.display = 'block';
-            setTimeout(() => {
-                status.style.display = 'none';
-            }, 5000);
+            setTimeout(() => { status.style.display = 'none'; }, 4000);
         });
     }
 </script>
-
 </body>
 </html>
