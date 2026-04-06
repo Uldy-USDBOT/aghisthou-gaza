@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جمعية البر - أغيثوا غزة</title>
+    <title>جمعية البر - إغاثة غزة</title>
     <style>
         :root {
             --primary-color: #d9534f;
             --secondary-color: #2c3e50;
-            --background-color: #f9f9f9;
+            --background-color: #f4f7f6;
             --text-color: #333;
         }
 
@@ -23,14 +23,15 @@
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 15px;
         }
 
+        /* Navigation */
         header {
             background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 15px 0;
             position: sticky;
             top: 0;
@@ -39,7 +40,7 @@
 
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -56,48 +57,55 @@
         .hero {
             background-color: var(--secondary-color);
             color: white;
-            padding: 120px 0;
+            padding: 100px 0 140px;
             text-align: center;
-            /* الصورة الرئيسية المستقرة */
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('http://googleusercontent.com/image_collection/image_retrieval/17528907659998576776_0');
+            /* صورة Hero عالمية معبرة */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200');
             background-size: cover;
             background-position: center;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero h1 { font-size: 3.2rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.4rem; opacity: 0.9; }
 
         /* Donation Box */
         .donation-box {
             background-color: white;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: -60px auto 40px;
-            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            margin: -80px auto 50px;
+            max-width: 700px;
             text-align: center;
             position: relative;
             z-index: 10;
         }
 
+        .donation-box h2 { color: var(--secondary-color); margin-bottom: 10px; }
+
         .wallet-container {
-            background-color: #f8f9fa;
+            background-color: #f8fafc;
             border: 2px dashed #cbd5e0;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 12px;
             margin: 25px 0;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
-        .wallet-container:hover { border-color: var(--primary-color); background-color: #fff; }
+        .wallet-container:hover {
+            border-color: var(--primary-color);
+            background-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .wallet-label { color: #64748b; font-size: 0.9rem; display: block; margin-bottom: 8px; }
 
         .wallet-address {
-            font-family: monospace;
-            font-size: 1.2rem;
-            color: #2d3748;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3rem;
+            color: #1e293b;
             word-break: break-all;
-            display: block;
-            margin-top: 10px;
             font-weight: bold;
         }
 
@@ -105,45 +113,58 @@
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-size: 1.2rem;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-size: 1.3rem;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 15px rgba(217, 83, 79, 0.3);
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(217, 83, 79, 0.4);
         }
 
-        .btn-copy:active { transform: scale(0.95); }
+        .btn-copy:hover { background-color: #c9302c; transform: scale(1.03); }
+        .btn-copy:active { transform: scale(0.98); }
 
         #copyStatus {
-            color: #27ae60;
+            color: #10b981;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 15px;
             display: none;
+            animation: fadeIn 0.5s;
         }
 
         /* Blog Section */
-        .blog { padding: 60px 0; }
+        .blog { padding: 50px 0; }
+        .section-title { text-align: center; margin-bottom: 45px; font-size: 2rem; color: var(--secondary-color); }
+
         .blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
 
         .blog-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
-        .blog-card img { width: 100%; height: 220px; object-fit: cover; }
-        .blog-content { padding: 20px; }
+        .blog-card:hover { transform: translateY(-10px); }
+        .blog-card img { width: 100%; height: 240px; object-fit: cover; }
+        .blog-content { padding: 25px; }
+        .blog-content h3 { margin-top: 0; color: var(--secondary-color); }
 
-        footer { background: var(--secondary-color); color: white; padding: 40px 0; text-align: center; }
+        footer { background: var(--secondary-color); color: #cbd5e0; padding: 50px 0; text-align: center; }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .donation-box { padding: 25px; width: 85%; }
+            .wallet-address { font-size: 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -158,52 +179,48 @@
 
 <section class="hero">
     <div class="container">
-        <h1>أغيثوا قلوباً في غزة</h1>
-        <p>مبادرة إنسانية لتوصيل تبرعاتكم مباشرة للأسر المتعففة والمتضررة</p>
+        <h1>معاً لإغاثة أهلنا في غزة</h1>
+        <p>تبرعك بالعملات الرقمية يصل مباشرة لمن هم في أمسّ الحاجة</p>
     </div>
 </section>
 
 <section class="container">
-    <div class="donation-box" id="donate">
-        <h2 style="color: var(--secondary-color);">تبرع الآن عبر USDT</h2>
-        <p>اضغط على العنوان أدناه أو الزر لنسخ محفظة التبرع (شبكة TRC20)</p>
+    <div class="donation-box">
+        <h2>تبرع الآن عبر USDT</h2>
+        <p>انسخ عنوان المحفظة للمساهمة في حملة الإغاثة</p>
         
         <div class="wallet-container" onclick="copyWallet()">
-            <span style="color: #718096; font-size: 0.9rem;">شبكة TRON (TRC20)</span>
+            <span class="wallet-label">الشبكة المدعومة: TRON (TRC20)</span>
             <span class="wallet-address" id="walletAddr">TSvW4XVmvY8cyvZdu3yFcbZyMsMW3dYYu8</span>
         </div>
 
-        <button class="btn-copy" onclick="copyWallet()">نسخ عنوان المحفظة للمساهمة</button>
-        <div id="copyStatus">✅ تم نسخ العنوان بنجاح!</div>
-        
-        <p style="margin-top: 20px; font-size: 0.85rem; color: #a0aec0;">
-            * يرجى التأكد من إرسال USDT عبر شبكة TRC20 فقط لضمان وصول التبرع.
-        </p>
+        <button class="btn-copy" onclick="copyWallet()">اضغط هنا لنسخ العنوان</button>
+        <div id="copyStatus">✅ تم النسخ! يمكنك الآن التحويل من محفظتك.</div>
     </div>
 </section>
 
 <section class="blog container">
-    <h2 style="text-align:center; margin-bottom:40px;">من واقع المعاناة</h2>
+    <h2 class="section-title">من واقع العمل الإنساني</h2>
     <div class="blog-grid">
         <div class="blog-card">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/17528907659998576776_1" alt="صمود">
+            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb8?q=80&w=600" alt="صمود">
             <div class="blog-content">
-                <h3>صمود يتحدى الركام</h3>
-                <p>قصص من قلب الأحياء التي رفضت الرحيل، حيث يتشارك الجميع لقمة العيش البسيطة.</p>
+                <h3>توزيع الطرود الغذائية</h3>
+                <p>نعمل على شراء وتوزيع المواد الغذائية الأساسية للعائلات التي فقدت مصادر دخلها.</p>
             </div>
         </div>
         <div class="blog-card">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/17528907659998576776_2" alt="كفاح">
+            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?q=80&w=600" alt="كفاح">
             <div class="blog-content">
-                <h3>كفاح اليوم الطويل</h3>
-                <p>رحلة البحث عن الماء النظيف والطاقة لتشغيل المستلزمات الطبية الأساسية.</p>
+                <h3>تأمين مياه الشرب</h3>
+                <p>مساهماتكم تساعدنا في صيانة محطات المياه وتوفير مياه نظيفة وصالحة للشرب.</p>
             </div>
         </div>
         <div class="blog-card">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/17528907659998576776_3" alt="أمل">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=600" alt="أمل">
             <div class="blog-content">
-                <h3>بصيص أمل</h3>
-                <p>بفضل تبرعاتكم، نتمكن من شراء الطرود الغذائية وتوزيعها على العائلات المنكوبة.</p>
+                <h3>دعم الأيتام والأسر</h3>
+                <p>نوفر كفالات عاجلة للأطفال والأسر المتضررة لضمان حياة كريمة رغم الظروف.</p>
             </div>
         </div>
     </div>
@@ -211,8 +228,9 @@
 
 <footer>
     <div class="container">
-        <p>جمعية البر - غزة في القلوب</p>
-        <p>© 2026 جميع الحقوق محفوظة لجمعية البر الإغاثية</p>
+        <p><strong>جمعية البر الإغاثية</strong></p>
+        <p>مبادرة أهلية لدعم صمود أهلنا في غزة عبر التقنيات الحديثة</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">© 2026 جميع الحقوق محفوظة لجمعية البر</p>
     </div>
 </footer>
 
@@ -224,9 +242,7 @@
             status.style.display = 'block';
             setTimeout(() => {
                 status.style.display = 'none';
-            }, 3000);
-        }).catch(err => {
-            console.error('فشل النسخ: ', err);
+            }, 4000);
         });
     }
 </script>
